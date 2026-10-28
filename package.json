@@ -1,0 +1,18 @@
+{
+  "name": "2026--sitio-web-alexbanexx-it",
+  "version": "1.0.0",
+  "description": "Dominar el flujo de trabajo de Git aplicado al proyecto. Al finalizar, vas a tener un repositorio público con el historial de cambios de tu sitio y al menos tres páginas completamente adaptadas a mobile y desktop.",
+  "main": "vite.config.js",
+  "devDependencies": {
+    "sass": "^1.107.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch scss/main.scss:css/styles.css --style=expanded",
+    "build": "sass scss/main.scss:css/stylesnpm run sass.css --style=compressed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
