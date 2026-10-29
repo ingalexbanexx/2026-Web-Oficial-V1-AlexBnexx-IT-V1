@@ -1,0 +1,58 @@
+// ===== Paleta neón =====
+$electric: #00f0ff;
+$electric-light: #7cf8ff;
+$midnight: #191970;
+$black: #000;
+$white: #fff;
+$ink: #f5fdff;
+$navy: #0a0a0a;
+$slate: #2a2a2a;
+$muted: #b7c9d1;
+$line: rgba($electric, 0.24);
+
+// ===== Textos auxiliares =====
+$text-link: #dffcff;
+$text-nav: #e7fbff;
+$text-social: #d8f8fc;
+$text-footer: #d7edf2;
+$text-copy: #9ebac3;
+$text-lead-hero: #d3e8ed;
+$text-process: #c2d0d8;
+$text-carousel: #f0f3f5;
+$text-card: #f4fdff;
+$text-btn: #05070a;
+$placeholder: #849ca4;
+
+// ===== Superficies =====
+$bg-header: #070a12;
+$bg-page-mid: #080a12;
+$bg-input: #0d1017;
+$bg-about: #11151c;
+$bg-card-start: #202126;
+$bg-card-end: #101115;
+$bg-card-hover: #222a30;
+$bg-dark-mid: #07111d;
+$bg-cta-end: #003340;
+$bg-hero-mid: #080b13;
+$bg-hero-end: #00343d;
+$bg-process-end: #17191f;
+$bg-footer-start: #050812;
+$bg-footer-end: #06131c;
+$border-input: #3b555d;
+
+// ===== Forma y tipografía =====
+$radius: 1.1rem;
+$font-sans: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+// ===== Capas (z-index) =====
+$z-header: 1020;
+$z-skip: 2000;
+
+// ===== Breakpoints (max-width) =====
+$breakpoints: (
+  'desktop-sm': 1199px,
+  'tablet': 900px,
+  'tablet-sm': 767px,
+  'mobile': 700px,
+  'mobile-sm': 600px
+);

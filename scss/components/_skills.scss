@@ -1,0 +1,42 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.category-block {
+  margin: 2.5rem 0;
+}
+
+.category-title {
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  margin-bottom: 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid $line;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.skill-card {
+  height: 100%;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  @include neon-card;
+
+  &:hover {
+    @include neon-card-hover;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    margin: 0.2rem 0 0.5rem;
+    color: $white;
+  }
+
+  p {
+    font-size: 0.94rem;
+    color: $muted;
+    margin: 0;
+  }
+}

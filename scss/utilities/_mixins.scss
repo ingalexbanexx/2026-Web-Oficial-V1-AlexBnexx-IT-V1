@@ -1,0 +1,37 @@
+@use 'sass:map';
+@use 'variables' as *;
+
+// Media query "hasta" un breakpoint del mapa $breakpoints
+@mixin respond-down($name) {
+  $width: map.get($breakpoints, $name);
+  @if $width == null {
+    @error "Breakpoint desconocido: #{$name}";
+  }
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+// Transición estándar de estados interactivos
+@mixin transition-base {
+  transition:
+    color 0.22s ease,
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+// Superficie de tarjeta neón
+@mixin neon-card {
+  background: linear-gradient(145deg, $bg-card-start, $bg-card-end);
+  border: 1px solid rgba($electric, 0.22);
+  color: $text-card;
+  box-shadow: 0 12px 32px rgba($black, 0.24);
+}
+
+@mixin neon-card-hover {
+  border-color: $electric;
+  box-shadow: 0 0 26px rgba($electric, 0.12);
+  background: linear-gradient(145deg, $bg-card-hover, $bg-card-end);
+}

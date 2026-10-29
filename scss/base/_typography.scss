@@ -1,0 +1,35 @@
+@use '../utilities/variables' as *;
+
+h1,
+h2,
+h3 {
+  font-weight: 750;
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+  color: $white;
+}
+
+h1 {
+  font-size: clamp(2.7rem, 5.5vw, 5.2rem);
+  margin: 0 0 1.35rem;
+
+  span {
+    color: $electric;
+    text-shadow: 0 0 18px rgba($electric, 0.18);
+  }
+}
+
+.eyebrow {
+  color: $electric;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  font-weight: 800;
+  margin: 0 0 1rem;
+}
+
+.hero-lead,
+.page-lead {
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  color: $muted;
+  max-width: 39rem;
+}

@@ -1,0 +1,81 @@
+@use '../utilities/variables' as *;
+
+.btn {
+  border-radius: 999px;
+  padding: 0.85rem 1.25rem;
+  font-weight: 700;
+}
+
+.btn-accent {
+  background: linear-gradient(120deg, $electric, $electric-light 45%, $midnight);
+  border: 1px solid $electric;
+  color: $text-btn;
+  box-shadow: 0 0 20px rgba($electric, 0.18);
+
+  &:hover,
+  &:focus {
+    background: $white;
+    border-color: $white;
+    color: $text-btn;
+    box-shadow: 0 0 22px rgba($electric, 0.32);
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(1px) scale(0.98);
+    background: $electric !important;
+    color: $black !important;
+  }
+}
+
+.text-link {
+  font-weight: 750;
+  border-bottom: 1px solid rgba($electric, 0.5);
+  padding-bottom: 0.2rem;
+
+  &:hover {
+    color: $electric;
+    border-color: $electric;
+  }
+
+  &:active {
+    color: $navy;
+    transform: scale(0.98);
+  }
+}
+
+.btn-light-outline {
+  border: 1px solid $electric;
+  color: $electric;
+  white-space: nowrap;
+
+  &:hover {
+    background: $electric;
+    color: $black;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+.btn-outline-accent {
+  border: 1px solid $electric;
+  color: $electric;
+  padding: 0.65rem 1rem;
+
+  &:hover {
+    background: $electric;
+    color: $black;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: scale(0.97);
+    background: $navy !important;
+  }
+}

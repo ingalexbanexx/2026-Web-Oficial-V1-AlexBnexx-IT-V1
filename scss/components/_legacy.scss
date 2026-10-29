@@ -1,0 +1,65 @@
+@use '../utilities/variables' as *;
+
+// ============================================================
+// LEGACY: restos de la identidad previa al estilo neón.
+// Se importa PRIMERO en main.scss para que cualquier regla
+// posterior la sobrescriba. Las reglas de abajo marcadas como
+// "superadas" ya no tienen efecto visual y se pueden borrar
+// cuando confirmes que ninguna página las necesita.
+// ============================================================
+
+// ----- Marca anterior (activa solo si el HTML aún usa estas clases) -----
+.brand-mark {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: $white !important;
+  font-size: 1.2rem;
+}
+
+.brand-dot {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.3rem;
+  background: linear-gradient(145deg, #f5f5f5, #777);
+  border-radius: 0.65rem;
+  color: #050505;
+  font-weight: 900;
+}
+
+.brand-light {
+  font-weight: 400;
+  color: #c7c9cc;
+}
+
+// ----- Superadas por el bloque neón -----
+.site-navbar {
+  background: rgba(5, 5, 5, 0.97);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, #e5e5e5, #929292);
+  border-color: #aaa;
+  color: #080808;
+
+  &:hover,
+  &:active {
+    background: $white;
+    color: $black;
+  }
+}
+
+.eyebrow,
+.service-icon,
+.process-grid strong {
+  color: #555;
+}
+
+.page-hero h1 span {
+  color: #777;
+}
+
+.service-card {
+  border-top: 3px solid #a8a8a8;
+}

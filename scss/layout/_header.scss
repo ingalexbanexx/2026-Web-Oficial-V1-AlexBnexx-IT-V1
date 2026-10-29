@@ -1,0 +1,122 @@
+@use '../utilities/variables' as *;
+
+.site-header {
+  position: relative;
+  z-index: $z-header;
+  background: $bg-header;
+  background-image:
+    linear-gradient(
+      110deg,
+      rgba($midnight, 0.92),
+      rgba(4, 13, 25, 0.98) 38%,
+      rgba(0, 50, 75, 0.88)
+    ),
+    url('../images/header-circuit.jpg');
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid rgba($electric, 0.75);
+  box-shadow: 0 7px 30px rgba($electric, 0.12);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba($electric, 0.08),
+      transparent
+    );
+    border-top: 2px solid rgba($electric, 0.8);
+  }
+}
+
+.site-navbar {
+  position: relative;
+  background: transparent;
+  padding: 0.55rem 0;
+  box-shadow: none;
+}
+
+.header-container {
+  padding-left: clamp(1rem, 3vw, 3.2rem);
+  padding-right: clamp(1rem, 3vw, 3.2rem);
+  gap: 1rem;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-right: 1rem;
+  white-space: nowrap;
+}
+
+.brand-logo {
+  display: block;
+  width: clamp(58px, 6.2vw, 88px);
+  height: clamp(42px, 4.8vw, 64px);
+  object-fit: contain;
+  filter: drop-shadow(0 0 9px rgba($electric, 0.4));
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.02;
+  letter-spacing: 0.04em;
+
+  strong {
+    font-size: clamp(0.95rem, 1.5vw, 1.45rem);
+    color: $electric;
+    text-transform: uppercase;
+    text-shadow: 0 0 13px rgba($electric, 0.4);
+  }
+
+  span {
+    font-size: clamp(0.75rem, 1vw, 1rem);
+    color: $white;
+    letter-spacing: 0.09em;
+    margin-top: 0.3rem;
+  }
+}
+
+.header-social {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  border-left: 1px solid rgba($electric, 0.65);
+  margin-left: 0.8rem;
+
+  a {
+    min-width: 58px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    padding: 0.2rem 0.65rem;
+    border-right: 1px solid rgba($electric, 0.23);
+    color: $electric;
+    text-decoration: none;
+
+    span {
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    small {
+      font-size: 0.58rem;
+      color: $text-social;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      background: rgba($electric, 0.1);
+      text-shadow: 0 0 10px $electric;
+      transform: translateY(-2px);
+    }
+  }
+}

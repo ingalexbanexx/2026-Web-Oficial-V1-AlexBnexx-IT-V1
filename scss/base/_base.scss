@@ -1,0 +1,64 @@
+@use '../utilities/variables' as *;
+
+// Variables CSS (las usan reglas con var(--...) y Bootstrap)
+:root {
+  --ink: #{$ink};
+  --navy: #{$navy};
+  --slate: #{$slate};
+  --accent: #{$electric};
+  --paper: #{$navy};
+  --muted: #{$muted};
+  --line: #{$line};
+  --white: #{$white};
+  --radius: #{$radius};
+  --electric: #{$electric};
+  --midnight: #{$midnight};
+}
+
+html,
+body {
+  background: $navy;
+  color: $ink;
+}
+
+body {
+  margin: 0;
+  font-family: $font-sans;
+  line-height: 1.65;
+  background-image:
+    radial-gradient(
+      ellipse at 50% -25%,
+      rgba($electric, 0.11),
+      transparent 55%
+    ),
+    linear-gradient(180deg, $navy, $bg-page-mid 48%, $navy);
+}
+
+// Accesibilidad: foco visible
+a,
+button,
+.btn,
+input,
+textarea,
+select {
+  &:focus-visible {
+    outline: 3px solid var(--accent) !important;
+    outline-offset: 4px;
+    box-shadow: 0 0 0 0.2rem rgba(190, 192, 195, 0.35) !important;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 1rem;
+  z-index: $z-skip;
+  padding: 0.65rem 1rem;
+  background: $electric;
+  color: $black;
+  border-radius: 0.5rem;
+
+  &:focus {
+    top: 1rem;
+  }
+}

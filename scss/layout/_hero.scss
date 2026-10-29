@@ -1,0 +1,74 @@
+@use '../utilities/variables' as *;
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+  max-width: 1320px;
+  margin: auto;
+  padding: clamp(3rem, 7vw, 7rem) 1.5rem 5rem;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 2rem 0 3rem;
+}
+
+.hero-stats {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2.4rem);
+  border-top: 1px solid $line;
+  padding-top: 1.3rem;
+
+  div {
+    display: flex;
+    gap: 0.65rem;
+    align-items: flex-start;
+  }
+
+  strong {
+    font-size: 1.1rem;
+    color: $electric;
+  }
+
+  span {
+    font-size: 0.76rem;
+    line-height: 1.4;
+    color: $muted;
+  }
+}
+
+.hero-art {
+  position: relative;
+
+  img {
+    width: 100%;
+    filter: drop-shadow(0 0 26px rgba($electric, 0.12));
+  }
+}
+
+.floating-note {
+  position: absolute;
+  bottom: 8%;
+  left: -4%;
+  background: $white;
+  border: 1px solid $line;
+  border-radius: 1rem;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 12px 30px rgba(8, 32, 50, 0.1);
+  font-size: 0.85rem;
+  font-weight: 750;
+}
+
+.note-dot {
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: #a1be02;
+  margin-right: 0.5rem;
+}

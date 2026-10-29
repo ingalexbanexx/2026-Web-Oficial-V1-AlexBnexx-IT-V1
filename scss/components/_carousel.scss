@@ -1,0 +1,51 @@
+@use '../utilities/variables' as *;
+
+.portfolio-carousel {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--navy);
+  border: 1px solid rgba($electric, 0.5);
+  box-shadow: 0 0 30px rgba($electric, 0.12);
+}
+
+.carousel-art {
+  height: clamp(320px, 48vw, 570px);
+  object-fit: cover;
+  opacity: 0.72;
+}
+
+.carousel-caption {
+  left: 8%;
+  right: 8%;
+  bottom: 12%;
+  text-align: left;
+  max-width: 600px;
+  background: linear-gradient(90deg, rgba(5, 8, 15, 0.82), transparent);
+  padding: 1.2rem;
+  border-radius: 0.7rem;
+
+  span {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    font-weight: 800;
+    color: $electric;
+  }
+
+  h3 {
+    font-size: clamp(1.8rem, 4vw, 3.6rem);
+    color: $white;
+    margin: 0.7rem 0;
+  }
+
+  p {
+    font-size: 1.05rem;
+    color: $text-carousel;
+  }
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 2rem;
+  height: 0.25rem;
+  border: 0;
+  border-radius: 2rem;
+}
