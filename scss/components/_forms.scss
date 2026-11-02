@@ -1,0 +1,33 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.contact-form {
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border-radius: var(--radius);
+  @include neon-card;
+}
+
+.form-label {
+  font-weight: 750;
+  color: $white;
+}
+
+.form-control,
+.form-select {
+  border-color: $border-input;
+  border-radius: 0.7rem;
+  padding: 0.75rem 0.85rem;
+  background: $bg-input;
+  color: $white;
+
+  &:focus {
+    background: $bg-input;
+    color: $white;
+    border-color: $electric;
+    box-shadow: 0 0 0 0.2rem rgba($electric, 0.13);
+  }
+}
+
+.form-control::placeholder {
+  color: $placeholder;
+}

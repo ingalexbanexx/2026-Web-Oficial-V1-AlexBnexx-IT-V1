@@ -1,0 +1,92 @@
+@use 'sass:map';
+@use 'variables' as *;
+
+// Media query "hasta" un breakpoint del mapa $breakpoints
+@mixin respond-down($name) {
+  $width: map.get($breakpoints, $name);
+  @if $width == null {
+    @error "Breakpoint desconocido: #{$name}";
+  }
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+// Transición estándar de estados interactivos
+@mixin transition-base {
+  transition:
+    color 0.22s ease,
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+// Superficie de tarjeta neón
+@mixin neon-card {
+  background: linear-gradient(145deg, $bg-card-start, $bg-card-end);
+  border: 1px solid rgba($electric, 0.22);
+  color: $text-card;
+  box-shadow: 0 12px 32px rgba($black, 0.24);
+}
+
+@mixin neon-card-hover {
+  border-color: $electric;
+  box-shadow: 0 0 26px rgba($electric, 0.12);
+  background: linear-gradient(145deg, $bg-card-hover, $bg-card-end);
+}
+
+// ============================================================
+// Mobile-first: media query "desde" un breakpoint de $breakpoints-up
+// ============================================================
+@mixin respond-up($name) {
+  $width: map.get($breakpoints-up, $name);
+  @if $width == null {
+    @error "Breakpoint desconocido: #{$name}";
+  }
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+// ============================================================
+// Mixin con parámetros: aplica una animación nativa
+// $name     → nombre del @keyframes
+// $duration → duración · $delay → retardo (acepta calc())
+// ============================================================
+// $fill → both (conserva el estado final) | backwards (lo libera: el :hover
+//         con transform sigue funcionando después de animar)
+@mixin animate($name, $duration: 0.7s, $delay: 0s, $easing: $ease-out, $fill: both) {
+  animation: $name $duration $easing $delay $fill;
+}
+
+// Genera un @keyframes de entrada (opacidad + transform)
+// $axis: y (sube) | x (entra de costado)
+@mixin keyframes-rise($name, $distance: $anim-rise, $scale: 1, $axis: y) {
+  $offset: translate3d(0, $distance, 0);
+
+  @if $axis == x {
+    $offset: translate3d($distance, 0, 0);
+  }
+
+  @keyframes #{$name} {
+    from {
+      opacity: 0;
+      transform: $offset scale($scale);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+  }
+}
+
+// Desfasa los hijos con --i y calc() (usar junto a animate)
+@mixin stagger-children($count: 6) {
+  @for $i from 1 through $count {
+    &:nth-child(#{$i}) {
+      --i: #{$i - 1};
+    }
+  }
+}

@@ -1,0 +1,138 @@
+@use '../utilities/variables' as *;
+
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    110deg,
+    $bg-footer-start,
+    $bg-dark-mid 55%,
+    $bg-footer-end
+  );
+  color: $text-footer;
+  padding: 1.5rem 0 1rem;
+  border-top: 1px solid $electric;
+  box-shadow: 0 -8px 30px rgba($electric, 0.08);
+}
+
+.footer-circuit {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(5, 10, 18, 0.15), rgba(5, 10, 18, 0.55)),
+    url('../images/footer-circuit.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.footer-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem 2rem;
+
+  p {
+    font-size: 0.78rem;
+    margin: 0;
+  }
+}
+
+.footer-brand {
+  font-weight: 800;
+  color: $white;
+
+  span {
+    font-weight: 400;
+    color: #9aabb5;
+  }
+}
+
+.footer-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: $white;
+
+  img {
+    width: 70px;
+    height: 50px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 7px rgba($electric, 0.35));
+  }
+
+  span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+  }
+
+  strong {
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: $electric;
+    text-transform: uppercase;
+  }
+
+  small {
+    font-size: 0.78rem;
+    margin-top: 0.25rem;
+  }
+}
+
+.footer-motto {
+  margin: 0;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+
+  i {
+    font-style: normal;
+    color: $electric;
+    padding: 0 0.45rem;
+  }
+}
+
+.footer-social {
+  display: flex;
+  align-items: stretch;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    min-width: 72px;
+    padding: 0.1rem 0.5rem;
+    border-left: 1px solid rgba($electric, 0.3);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: $electric;
+
+    small {
+      font-size: 0.58rem;
+      font-weight: 400;
+      color: $text-footer;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      background: rgba($electric, 0.1);
+      text-shadow: 0 0 10px $electric;
+    }
+  }
+}
+
+.footer-copy {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba($electric, 0.2);
+  font-size: 0.72rem;
+  color: $text-copy;
+}

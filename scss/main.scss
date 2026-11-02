@@ -1,0 +1,34 @@
+// ============================================================
+// AlexBanexx Soluciones IT · main.scss
+// El orden de @use define el orden del CSS final (cascada).
+// ============================================================
+
+// 1) Utilidades (no generan CSS)
+@use 'utilities/variables';
+@use 'utilities/mixins';
+
+// 2) Legacy primero: todo lo posterior lo sobrescribe
+// @use 'components/legacy';
+
+// 3) Base
+@use 'base/reset';
+@use 'base/base';
+@use 'base/typography';
+
+// 4) Layout
+@use 'layout/header';
+@use 'layout/nav';
+@use 'layout/hero';
+@use 'layout/section';
+@use 'layout/footer';
+
+// 5) Componentes
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/carousel';
+@use 'components/forms';
+@use 'components/modals';
+@use 'components/skills';
+
+// 6) Responsive al final (los media queries deben ganar a los estilos base)
+@use 'layout/responsive';

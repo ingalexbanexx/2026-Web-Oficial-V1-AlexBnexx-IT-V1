@@ -1,0 +1,29 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: $text-link;
+  text-decoration: none;
+  @include transition-base;
+
+  &:hover {
+    color: $electric;
+  }
+}
+
+button,
+.btn,
+.nav-link,
+.project-card,
+.feature-card,
+.service-card {
+  @include transition-base;
+}

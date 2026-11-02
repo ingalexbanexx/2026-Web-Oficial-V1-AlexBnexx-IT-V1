@@ -1,0 +1,17 @@
+@use '../utilities/variables' as *;
+
+.custom-modal {
+  border: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  .modal-header,
+  .modal-footer {
+    border-color: $line;
+  }
+
+  .modal-title {
+    color: $navy;
+    font-weight: 800;
+  }
+}

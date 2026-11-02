@@ -1,0 +1,269 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+// Se mantiene el orden original: 900 → 600 → 767 → 1199 → 700
+
+// ===== Tablet (≤ 900px) =====
+@include respond-down('tablet') {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-art {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .hero-copy {
+    max-width: 760px;
+  }
+
+  .projects-grid,
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projects-grid .project-card:last-child {
+    grid-column: span 2;
+  }
+
+  .about-layout,
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-visual {
+    max-width: 600px;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+// ===== Móvil pequeño (≤ 600px) =====
+@include respond-down('mobile-sm') {
+  .hero-grid {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-stats {
+    gap: 0.8rem;
+
+    div {
+      display: block;
+    }
+
+    span {
+      display: block;
+      margin-top: 0.3rem;
+    }
+  }
+
+  .section-wrap {
+    padding: 3rem 1.1rem;
+  }
+
+  .feature-grid,
+  .projects-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid .project-card:last-child {
+    grid-column: auto;
+  }
+
+  .section-heading-row,
+  .cta-band {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .carousel-art {
+    height: 390px;
+  }
+
+  .carousel-caption {
+    bottom: 12%;
+    left: 10%;
+    right: 10%;
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .page-content {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// ===== Tablet pequeña (≤ 767px) =====
+@include respond-down('tablet-sm') {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo {
+    max-height: 460px;
+  }
+}
+
+// ===== Escritorio chico (≤ 1199px) =====
+@include respond-down('desktop-sm') {
+  .header-social {
+    border-left: 0;
+    border-top: 1px solid rgba($electric, 0.3);
+    margin: 0.7rem 0 0;
+    padding-top: 0.7rem;
+    justify-content: flex-start;
+
+    a {
+      min-width: 80px;
+    }
+  }
+
+  .nav-main {
+    align-items: stretch;
+  }
+
+  .site-navbar .nav-link {
+    padding: 0.65rem 0.4rem !important;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr auto;
+  }
+
+  .footer-motto {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .footer-social {
+    justify-content: flex-end;
+  }
+}
+
+// ===== Móvil (≤ 700px) =====
+@include respond-down('mobile') {
+  .brand-logo {
+    width: 54px;
+    height: 43px;
+  }
+
+  .brand-copy {
+    strong {
+      font-size: 0.92rem;
+    }
+
+    span {
+      font-size: 0.73rem;
+    }
+  }
+
+  .header-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .header-social {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+
+    a {
+      flex-direction: row;
+      justify-content: flex-start;
+      border-bottom: 1px solid rgba($electric, 0.18);
+      padding: 0.45rem 0.6rem;
+
+      span {
+        width: 1.6rem;
+        text-align: center;
+      }
+
+      small {
+        font-size: 0.68rem;
+      }
+    }
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .footer-motto {
+    grid-column: auto;
+    grid-row: auto;
+    white-space: normal;
+    line-height: 1.8;
+  }
+
+  .footer-social {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+
+    a {
+      border: 1px solid rgba($electric, 0.2);
+      padding: 0.5rem;
+
+      small {
+        white-space: normal;
+        text-align: center;
+      }
+    }
+  }
+
+  .footer-copy {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .page-hero {
+    padding: 3rem 0;
+  }
+
+  .carousel-caption {
+    left: 5%;
+    right: 5%;
+    bottom: 10%;
+    padding: 0.7rem;
+
+    h3 {
+      font-size: 1.7rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+// ===== Preferencia de movimiento reducido =====
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .site-header::before {
+    display: none;
+  }
+}   
